@@ -26,7 +26,7 @@ public class MysqlDatabase implements Serializable {
     @Field("tables")
     private HashMap<String,Table> tables;
 
-    private
+    //private
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public String getId() {
