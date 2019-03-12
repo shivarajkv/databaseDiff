@@ -1,0 +1,27 @@
+
+{
+    "gatewayApp": {
+        "mysqlParserMysqlDatabase" : {
+            "home": {
+                "title": "MysqlDatabases",
+                "createLabel": "नया Mysql Database बनाएँ",
+                "createOrEditLabel": "Mysql Database बनाएँ या संपादित करें"
+            },
+            "delete": {
+                "question": "Mysql Database [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Mysql Database"
+            },
+            "version": "Version",
+            "tables": "Tables"
+        }
+    },
+    "mysqlParserApp": {
+        "mysqlParserMysqlDatabase" : {
+            "created": "एक नया Mysql Database [identifier: {{ param }}] तैयार है",
+            "updated": "एक Mysql Database [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Mysql Database [identifier: {{ param }}] हटा दिया है"
+        }
+    }
+}

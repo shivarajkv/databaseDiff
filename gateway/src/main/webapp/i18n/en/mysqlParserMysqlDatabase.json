@@ -1,0 +1,27 @@
+
+{
+    "gatewayApp": {
+        "mysqlParserMysqlDatabase" : {
+            "home": {
+                "title": "Mysql Databases",
+                "createLabel": "Create a new Mysql Database",
+                "createOrEditLabel": "Create or edit a Mysql Database"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Mysql Database {{ id }}?"
+            },
+            "detail": {
+                "title": "Mysql Database"
+            },
+            "version": "Version",
+            "tables": "Tables"
+        }
+    },
+    "mysqlParserApp": {
+        "mysqlParserMysqlDatabase" : {
+            "created": "A new Mysql Database is created with identifier {{ param }}",
+            "updated": "A Mysql Database is updated with identifier {{ param }}",
+            "deleted": "A Mysql Database is deleted with identifier {{ param }}"
+        }
+    }
+}
