@@ -2,23 +2,26 @@ import { Component, OnDestroy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 import { Subscription } from 'rxjs';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
     selector: 'jhi-alert-error',
-    template: `
-        <div class="alerts" role="alert">
-            <div *ngFor="let alert of alerts"  [ngClass]="{\'alert.position\': true, \'toast\': alert.toast}">
-                <ngb-alert *ngIf="alert && alert.type && alert.msg" [type]="alert.type" (close)="alert.close(alerts)">
-                    <pre [innerHTML]="alert.msg"></pre>
-                </ngb-alert>
-            </div>
-        </div>`
+    // template: `
+    //     <div class="alerts" role="alert">
+    //         <div *ngFor="let alert of alerts"  [ngClass]="{\'alert.position\': true, \'toast\': alert.toast}">
+    //             <ngb-alert *ngIf="alert && alert.type && alert.msg" [type]="alert.type" (close)="alert.close(alerts)">
+    //                 <pre [innerHTML]="alert.msg"></pre>
+    //             </ngb-alert>
+    //         </div>
+    //     </div>`,
+    template: ''
 })
 export class JhiAlertErrorComponent implements OnDestroy {
     alerts: any[];
     cleanHttpErrorListener: Subscription;
     /* tslint:disable */
-    constructor(private alertService: JhiAlertService, private eventManager: JhiEventManager, private translateService: TranslateService) {
+    constructor(private alertService: JhiAlertService, private eventManager: JhiEventManager,
+        private translateService: TranslateService, private snackBar: MatSnackBar) {
         /* tslint:enable */
         this.alerts = [];
 
@@ -101,5 +104,8 @@ export class JhiAlertErrorComponent implements OnDestroy {
                 this.alerts
             )
         );
+        this.alerts.forEach(alert => {
+            this.snackBar.open(alert.msg);
+        });
     }
 }

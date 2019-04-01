@@ -52,7 +52,7 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
             test: /\.ts$/,
             enforce: 'pre',
             loaders: 'tslint-loader',
-            exclude: ['node_modules', new RegExp('reflect-metadata\\' + path.sep + 'Reflect\\.ts')]
+            exclude: [/(node_modules)/, new RegExp('reflect-metadata\\' + path.sep + 'Reflect\\.ts')]
         },
         {
             test: /\.ts$/,
@@ -75,7 +75,7 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
                 },
                 { loader: 'angular-router-loader' }
             ],
-            exclude: ['node_modules']
+            exclude: /(node_modules)/
         },
         {
             test: /\.css$/,

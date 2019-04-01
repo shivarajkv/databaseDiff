@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgJhipsterModule } from 'ng-jhipster';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { CookieModule } from 'ngx-cookie';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
     imports: [
-        NgbModule.forRoot(),
+        BrowserAnimationsModule,
         NgJhipsterModule.forRoot({
             // set below to true to make alerts look like toast
             alertAsToast: false,
@@ -18,8 +20,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
         }),
         InfiniteScrollModule,
         CookieModule.forRoot(),
-        FontAwesomeModule
+        FontAwesomeModule,
+        MatToolbarModule
     ],
-    exports: [FormsModule, CommonModule, NgbModule, NgJhipsterModule, InfiniteScrollModule, FontAwesomeModule]
+    exports: [FormsModule, CommonModule, BrowserAnimationsModule, NgJhipsterModule, InfiniteScrollModule,
+        FontAwesomeModule, MatToolbarModule, MatSnackBarModule]
 })
-export class GatewaySharedLibsModule {}
+export class GatewaySharedLibsModule { }
